@@ -1,0 +1,48 @@
+<%= javascript_include_tag 'jquery-3.2.1', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'intercept', 'data-turbolinks-track': 'reload' %>
+
+
+
+
+
+<div>
+
+  Intercept link that will call a method methodtobeintercepted in controller.<br>
+  This needs to be intercepted<br>
+  <a href="javascript:interceptthis();">Intercept Me</a>
+</div>
+
+
+
+<script>
+
+    ////http://stackoverflow.com/questions/27098239/post-422-unprocessable-entity-in-rails-due-to-the-routes-or-the-controller
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+
+    function interceptthis() {
+
+        var myObject = new Object();
+        myObject.name = "June";
+        myObject.surname = "DC";
+        myObject.company = "Flipmind";
+
+
+        $.ajax({
+            type: "POST",
+            url: "methodtobeintercepted",
+            data : JSON.stringify(myObject),
+            success: function (result) {
+                console.log('method was called');
+            },
+            error: function (e) {
+                console.log('method was not called');
+            }
+        });
+
+    }
+</script>

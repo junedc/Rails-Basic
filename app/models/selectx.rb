@@ -1,0 +1,2 @@
+class Selectx < ApplicationRecord
+end

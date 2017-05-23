@@ -1,0 +1,84 @@
+<%= stylesheet_link_tag "select2" %>
+<%= stylesheet_link_tag "select2header" %>
+
+
+Coming from controller <br>
+<select id="selectKey" style="width:100%"></select>
+
+<br><br><br><br><br>
+Coming from URL ONLY
+<select id="selectByURL" style="width:100%">
+
+  <option value="all">All</option>
+  <% @cities.each do |city| %>
+      <option value="<%= city.id %>"><%= city.text %></option>
+  <% end %>
+</select>
+
+<%= @examples %>
+
+<%= javascript_include_tag 'jquery-3.2.1', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'select2.full', 'data-turbolinks-track': 'reload' %>
+
+
+<script>
+    var $ajax = $("#selectKey");
+
+
+    $ajax.select2({
+
+        minimumInputLength: 1,
+        minimumResultsForSearch: 10,
+        ajax: {
+
+            url: "/selectjson",
+            dataType: "json",
+            type: "GET",
+            data: function (params) {
+                //https://gist.github.com/checkraiser/5696651
+                //sample code
+                var queryParameters = {
+                    term: params.term
+                }
+                return queryParameters;
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        //console.log(item);
+                        return {
+                            text: item.city,
+                            id: item.custname
+                        }
+                    })
+                };
+            }
+        }
+    }).on("change", function (e) {
+
+        var lastValue = $("#selectKey option:last-child").val();
+        var lastText = $("#selectKey option:last-child").text();
+        console.log(lastValue + ' ' + lastText);
+
+
+    });
+
+
+</script>
+
+<script>
+    var $selectByURL = $("#selectByURL");
+
+
+    $selectByURL.select2({
+        minimumInputLength: 1,
+        minimumResultsForSearch: 10,
+
+    }).on("change", function (e) {
+
+        var lastValue = $("#selectKey option:last-child").val();
+        var lastText = $("#selectKey option:last-child").text();
+        console.log(lastValue + ' ' + lastText);
+    });
+</script>
+
