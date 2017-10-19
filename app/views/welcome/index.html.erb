@@ -1,93 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
 
-    h1 {
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 24px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 500;
-      line-height: 26.4px;
-    }
-
-    h3 {
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 14px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 500;
-      line-height: 15.4px;
-    }
-
-    p {
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 14px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 400;
-      line-height: 20px;
-    }
-
-    button.accordion {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      transition: 0.4s;
-    }
-
-    button.accordion.active, button.accordion:hover {
-      background-color: #ddd;
-    }
-
-    button.accordion:after {
-      content: '\002B';
-      color: #777;
-      font-weight: bold;
-      float: right;
-      margin-left: 5px;
-    }
-
-    button.accordion.active:after {
-      content: "\2212";
-    }
-
-    div.panel {
-      padding: 0 18px;
-      background-color: white;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-    }
-  </style>
-</head>
 <body>
 
-<h1>Rails Miscellaneous Codes</h1>
-<p></p>
-<button class="accordion">Implement Interceptor</button>
-<div class="panel">
-  <p>
 
-    <a href="/showintercept">Show Intercept Window</a>
-
-  </p>
-</div>
+    <div class="container">
 
 
-<button class="accordion"> Loading JSON from URL</button>
-<div class="panel">
-  <p>
-    <a href="/jsonfromurl" target="_self"> Loading JSON from URL </a>
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Rails Tutorial!</h1>       
+      </div>
 
-    <br>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Hello, Rails!</h2>
+          <p><%= link_to 'Articles', controller: 'articles' %></p>
+         
+          <p><a class="btn btn-primary" href="/articles" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Select 2 Implementation JSON Testing</h2>
+          <p>Select 2 Implementation JSON Testing</p>
+          <p><a class="btn btn-primary" href="/selectjsontest" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Display Random Record</h2>
+          <p>Get a random record and display</p>
+          <p><a class="btn btn-primary" href="/getrandomrecord" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Professors and Expertise Checkboxes</h2>
+          <p>As seen on this <a href='http://www.sitepoint.com/save-multiple-checkbox-values-database-rails'>blog</a>. We will learn how to attached textboxes to parent table.</p>
+          <p><a class="btn btn-primary" href="/professors" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Select 2 Implementation JSON Data</h2>
+          <p>Select 2 Implementation JSON Data </p>
+          <p><a class="btn btn-primary" href="/selectjson" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>User Maintenance</h2>
+          <p><a href="users" target="_self"> User Listing </a></p>
+          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+
+
+       <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Loading Json from Table</h2>
+          <p>Will display a json results from table</p>
+          <p><a class="btn btn-primary" href="/jsonoutput" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Interceptor Implementation</h2>
+          <p>Learn javascript interceptors</p>
+          <p><a class="btn btn-primary" href="/showintercept" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Select 2 Implementation</h2>
+          <p>Select 2 Implementations</p>
+          <p><a class="btn btn-primary" href="/select" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+
+
+       <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Loading JSON from URL</h2>
+          <p>
+    
     Sources <br>
     Calling API - https://www.twilio.com/blog/2015/10/4-ways-to-parse-a-json-api-with-ruby.html
     <br>
@@ -95,110 +88,36 @@
     https://github.com/plataformatec/devise/wiki/Example-Applications
     https://github.com/plataformatec/devise
 
-  </p>
-</div>
+          </p>
+          <p><a class="btn btn-primary" href="/jsonfromurl" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Loading JSON from URL with Token Headers</h2>
+          <p>
+          Loading JSON from URL with Token Headers
+          </p>
+          <p><a class="btn btn-primary" href="/jsonwithtoken" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Loading JSON from URL with Token Headers with rest client</h2>
+          <p>Loading JSON from URL with Token Headers with rest client</p>
+          <p><a class="btn btn-primary" href="/jsonwithrestclient" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
 
 
-<button class="accordion"> Loading JSON from table</button>
-<div class="panel">
-  <p>
-
-    <a href="/jsonoutput" target="_self"> Loading JSON from table </a>
-  </p>
-</div>
 
 
-<button class="accordion"> Loading JSON from URL with Token Headers</button>
-<div class="panel">
-  <p><a href="/jsonwithtoken" target="_self"> Loading JSON from URL with Token Headers </a>
-  </p>
-</div>
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; Company 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
 
 
-<button class="accordion">Loading JSON from URL with Token Headers with rest client</button>
-<div class="panel">
-  <p><a href="/jsonwithrestclient" target="_self"> Loading JSON from URL with Token Headers with rest client </a>
-  </p>
-</div>
 
 
-<button class="accordion">Display Random Record</button>
-<div class="panel">
-  <p><a href="/getrandomrecord" target="_self"> Display Random Record </a>
-  </p>
-</div>
-
-
-<button class="accordion">Select 2 Implementation</button>
-<div class="panel">
-  <p><a href="/select" target="_self"> Select 2 Implementation </a>
-  </p>
-</div>
-
-
-<button class="accordion">Select 2 Implementation JSON Testing</button>
-<div class="panel">
-  <p>
-    <a href="/selectjsontest" target="_self"> Select 2 Implementation JSON Testing</a>
-  </p>
-</div>
-
-
-<button class="accordion">Hello, Rails!</button>
-<div class="panel">
-  <p><%= link_to 'My Blog', controller: 'articles' %>
-  </p>
-</div>
-
-<button class="accordion">User Maintenance</button>
-<div class="panel">
-
-
-  <a href="users" target="_self"> User Listing </a>
-  </p>
-</div>
-
-
-<button class="accordion">Select 2 Implementation JSON Data</button>
-<div class="panel">
-  <p><a href="/selectjson" target="_self"> Select 2 Implementation JSON Data </a>
-  </p>
-</div>
-
-
-<button class="accordion">Professor and expertise checkboxes</button>
-<div class="panel">
-  <p>
-    <p><a href="/professors" target="_self"> Professor and Checkboxes</a>
-    http://www.sitepoint.com/save-multiple-checkbox-values-database-rails
-  </p>
-</div>
-
-
-<button class="accordion">TitleHere</button>
-<div class="panel">
-  <p>
-    ContentHere
-  </p>
-</div>
-
-
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        }
-    }
-</script>
 
 </body>
 </html>
