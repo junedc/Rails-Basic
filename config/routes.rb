@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :articles
   resources :people, only: [:index]
   resources :users
-
+  
+  resources :expertises
+  resources :professors
 
 
   get 'createshop', to: 'special#createshop'

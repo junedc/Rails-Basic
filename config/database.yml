@@ -16,7 +16,7 @@ default: &default
 
 development:
   <<: *default
-  database: SHOPIFY
+  database: rails-basic
   username: root
   password: password
   host: localhost
@@ -28,14 +28,14 @@ development:
 test:
   <<: *default
 #  database: db/test.sqlite3
-  database: SHOPIFY
+  database: rails-basic
   username: root
   password: password
   host: localhost
 
 production:
   <<: *default
-  database: SHOPIFY
+  database: rails-basic
   username: root
   password: password
   host: localhost

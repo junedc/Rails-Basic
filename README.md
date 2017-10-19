@@ -24,3 +24,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+run these before hitting the app
+rails db:migrate RAILS_ENV=development

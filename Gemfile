@@ -37,6 +37,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'mysql2'
 
 
+#nneded by professor combobox route
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'ransack'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri  

@@ -11,9 +11,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Dumping database structure for shopify
-CREATE DATABASE IF NOT EXISTS `shopify` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `shopify`;
 
 -- Dumping structure for table shopify.app_coupon
 CREATE TABLE IF NOT EXISTS `app_coupon` (
@@ -266,7 +263,3 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 	(1, 'june', 'june-pogi', '2017-05-09 00:39:37', '2017-05-09 00:39:37');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
