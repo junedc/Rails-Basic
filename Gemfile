@@ -46,6 +46,10 @@ gem 'ransack'
 gem 'bootstrap-sass', '3.3.7'
 
 
+#adding soap capability
+gem 'savon', '~> 2.11.1'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri  
