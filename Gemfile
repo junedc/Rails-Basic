@@ -81,3 +81,9 @@ gem 'haml', '~> 4.0.0'
 
 # For Friendly Id https://github.com/norman/friendly_id
 gem 'friendly_id', '~> 5.1.0'
+
+
+
+#https://thoughtbot.com/upcase/videos/generating-pdfs-with-rails?utm_source=github&utm_medium=companion-code&utm_campaign=upcase-generating-pdfs-with-rails
+gem "pdfkit"
+gem "render_anywhere", require: false

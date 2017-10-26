@@ -47,5 +47,10 @@ Rails.application.routes.draw do
   post 'anothermethod', to: 'intercept#anothermethod'
 
 
+  #generating pdf
+  resources :invoices, only: [:index, :show] do
+    resource :download, only: [:show]
+  end
+
 end
 
