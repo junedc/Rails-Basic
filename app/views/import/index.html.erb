@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>CSV Import</h2>
+  
+  <form action="/import" type="post" >
+    <div class="form-group">
+      <label for="comment">Name,Email</label>
+      <textarea class="form-control" rows="10" id="userListings" name="csv"></textarea>
+    </div>
+
+     <button type="button" class="btn btn-info pull-right" onclick="javascript:insertUserListing('/import');">Slow Import</button>
+
+      <button type="button" class="btn btn-info pull-right" onclick="javascript:insertUserListing('/fastimport');">Fast Import</button>
+  </form>
+</div>
+
+<script>
+
+
+//user click the import from list button
+function insertUserListing(surl) {
+   
+    var users = $("#userListings").val();
+    var url = surl;
+    var posting = $.post(url,
+        {
+            csv: users,           
+        });
+
+
+    // Put the results in a div
+    posting.done(function (data) {
+        
+
+        //console.log(data);
+        if (data.invalid < 1) {
+            $('#userListings').val('');
+            console.log(data);
+        } else {
+
+            
+            console.log(data);
+            
+            jQuery.each(data.invalid_data, function (index, element) { 
+                 console.log(element);
+            });            
+
+            //clears the text area
+            $("#userListings").val("");
+        }
+
+    }).fail(function (error) {
+       console.log(error);
+    });
+
+}
+
+
+
+
+
+</script>

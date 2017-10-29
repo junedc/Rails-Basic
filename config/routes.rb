@@ -52,5 +52,10 @@ Rails.application.routes.draw do
     resource :download, only: [:show]
   end
 
+  #import related stuff
+  get 'import', to: 'import#index'
+  post 'import', to: 'import#slowimport'
+  post 'fastimport', to: 'import#fastimport'
+
 end
 

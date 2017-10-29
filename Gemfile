@@ -87,3 +87,6 @@ gem 'friendly_id', '~> 5.1.0'
 #https://thoughtbot.com/upcase/videos/generating-pdfs-with-rails?utm_source=github&utm_medium=companion-code&utm_campaign=upcase-generating-pdfs-with-rails
 gem "pdfkit"
 gem "render_anywhere", require: false
+
+
+gem "activerecord-import", ">= 0.2.0"
