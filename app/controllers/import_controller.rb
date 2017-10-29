@@ -88,10 +88,12 @@ class ImportController < ApplicationController
 
   def fastimport
         
-    
+    #these 3 lines are working
     columns = [:name, :email]
-    users = [ ['me', 'me@b.com'], ['sya', 'sya@a.com'] ]
-    User.import columns, users, validate: false
+    
+
+    #users = [ ['me', 'me@b.com'], ['sya', 'sya@a.com'] ]
+    #User.import columns, users, validate: false
 
     
     csvContent = params[:csv]  
@@ -111,7 +113,10 @@ class ImportController < ApplicationController
       rowsInserted = 0
       invalidrows = 0
 
-    User.import columns, rows, validate: false
+    errors = User.import columns, rows, validate: false
+    puts 'any errors'
+    puts errors
+    puts 'errors'
 
     invalidrows = 5
     invalid_data ||= []
