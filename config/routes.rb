@@ -57,5 +57,15 @@ Rails.application.routes.draw do
   post 'import', to: 'import#slowimport'
   post 'fastimport', to: 'import#fastimport'
 
+
+  #eager loading stuff
+  resources :posts
+  resources :authors
+
+
+  get 'eagerload', to: 'posts#eagerload'  
+  get 'preload', to: 'posts#preload' 
+  get 'includes' , to: 'posts#includes' 
+
 end
 
