@@ -97,23 +97,22 @@ class ImportController < ApplicationController
 
     
     csvContent = params[:csv]  
+ 
+    sep = ","
+    if (csvContent.include?("\t"))
+      sep="\t"
+    end
 
-   
-      sep = ","
-      if (csvContent.include?("\t"))
-        sep="\t"
-      end
-
-      csvContent = "name" + sep + "email"  + "\n" + csvContent
+    csvContent = "name" + sep + "email"  + "\n" + csvContent
 
 
-      csv = CSV.new(csvContent, :headers => true, :header_converters => :symbol, :col_sep => sep)
-      rows = csv.to_a.map {|row| row.to_hash}
+    csv = CSV.new(csvContent, :headers => true, :header_converters => :symbol, :col_sep => sep)
+    rows = csv.to_a.map {|row| row.to_hash}
 
-      rowsInserted = 0
-      invalidrows = 0
+    rowsInserted = 0
+    invalidrows = 0
 
-    errors = User.import columns, rows, validate: false
+    errors = User.import columns, rows, validate: true
     puts 'any errors'
     puts errors
     puts 'errors'
