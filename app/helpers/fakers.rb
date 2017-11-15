@@ -2,11 +2,14 @@
 require 'faker'
 
 
-100.times.map { 
+1100.times.map { 
 
-	fname = Faker::Name.first_name.to_s
+	firstname = Faker::Name.first_name.to_s
+	lastname = Faker::Name.last_name.to_s
 	email = Faker::Internet.email.to_s
-	anything =  Faker::Number.number(3).to_s
+	username =  Faker::Number.number(10).to_s
+	department = Faker::Job.field
+	password = Faker::Number.number(10).to_s
 
-	puts  fname + ',' +  email  + ',' + anything
+	puts  firstname + ',' +  lastname  + ',' + email + ',' + username  + ',' + department + ',' + password
 }
